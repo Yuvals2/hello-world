@@ -17,6 +17,5 @@ jobs:
           pip install beautifulsoup4
       - name: run pull
         run: |
-          python -m code.pull
-
+          python code.pull.py
   
