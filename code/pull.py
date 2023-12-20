@@ -3,7 +3,7 @@ from urllib import request
 from urllib.request import Request, urlopen
 import smtplib
 from email.mime.text import MIMEText
-MAX_PRICE = 100
+MAX_PRICE = 99
 
 def send_email(subject, body, sender, recipient, password):
   msg = MIMEText(body)
