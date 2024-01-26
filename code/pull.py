@@ -3,7 +3,7 @@ from urllib import request
 from urllib.request import Request, urlopen
 import smtplib
 from email.mime.text import MIMEText
-MAX_PRICE = 79
+MAX_PRICE = 100
 
 def send_email(subject, body, sender, recipient, password):
   msg = MIMEText(body)
@@ -14,7 +14,7 @@ def send_email(subject, body, sender, recipient, password):
     smtp_server.login(sender, password)
     smtp_server.sendmail(sender, recipient, msg.as_string())
 def main():
-  url = "https://www.pullandbear.com/il/%D7%A0%D7%A9%D7%99%D7%9D/%D7%91%D7%99%D7%92%D7%95%D7%93/%D7%92%27%D7%99%D7%A0%D7%A1/mom-fit-n6584"
+  url = "https://www.pullandbear.com/il/%D7%A0%D7%A9%D7%99%D7%9D/%D7%91%D7%99%D7%92%D7%95%D7%93/%D7%92%27%D7%99%D7%A0%D7%A1/mom-fit-n6584?q=Mom+fit+%D7%A0%D7%95%D7%97&filter=hierarchical_category%3A1030248033&page=1&scroll=74"
   request_site = Request(url, headers={"User-Agent": "Mozilla/5.0"})
   html_doc = urlopen(request_site).read()
   soup = BeautifulSoup(html_doc, 'html.parser')
